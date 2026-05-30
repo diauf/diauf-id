@@ -282,7 +282,44 @@ text-align:center;
 font-size:50px;
 margin-bottom:20px;
 }
+.compare-table{
+background:white;
+border-radius:24px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
 
+.compare-header{
+display:grid;
+grid-template-columns:1fr 1fr;
+background:var(--navy);
+color:white;
+font-weight:700;
+}
+
+.compare-header div{
+padding:24px;
+text-align:center;
+}
+
+.compare-row{
+display:grid;
+grid-template-columns:1fr 1fr;
+border-bottom:1px solid #eee;
+}
+
+.compare-row:last-child{
+border:none;
+}
+
+.compare-row div{
+padding:22px;
+}
+
+.compare-row div:last-child{
+font-weight:600;
+color:var(--emerald);
+}
 footer{
 background:#050b16;
 padding:40px;
@@ -426,7 +463,64 @@ Konsultasi Gratis
 </div>
 
 </section>
+<section class="gray">
 
+<div class="container">
+
+<div class="title">
+
+<h2>
+Mengapa Banyak UMKM Beralih ke DIAUF.ID?
+</h2>
+
+<p>
+Lebih hemat, lebih terukur, dan tetap mendapatkan sistem keuangan yang profesional.
+</p>
+
+</div>
+
+<div class="compare-table">
+
+<div class="compare-header">
+<div>Finance Internal</div>
+<div>DIAUF.ID</div>
+</div>
+
+<div class="compare-row">
+<div>Gaji Rp4–8 juta per bulan</div>
+<div>Mulai Rp1 juta per bulan</div>
+</div>
+
+<div class="compare-row">
+<div>Risiko resign</div>
+<div>Sistem tetap berjalan</div>
+</div>
+
+<div class="compare-row">
+<div>Perlu training dan supervisi</div>
+<div>Monitoring rutin</div>
+</div>
+
+<div class="compare-row">
+<div>Belum tentu memahami pajak</div>
+<div>Sekaligus pendampingan pajak</div>
+</div>
+
+<div class="compare-row">
+<div>Data tersebar di banyak file</div>
+<div>Dashboard bisnis terintegrasi</div>
+</div>
+
+<div class="compare-row">
+<div>Laporan sering terlambat</div>
+<div>Laporan berkala dan realtime</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
 <section id="layanan">
 
 <div class="container">
@@ -595,8 +689,18 @@ Hubungi Kami
 
 </footer>
 
-<a class="wa" href="#">
-💬 Konsultasi Gratis
+<a
+class="wa"
+href="https://wa.me/6281252510441"
+target="_blank">
+
+<img
+src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+width="22"
+height="22">
+
+<span>Konsultasi Gratis</span>
+
 </a>
 
 </body>
