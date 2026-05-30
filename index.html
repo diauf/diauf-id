@@ -3,21 +3,23 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>DIAUF.ID | Mitra Manajemen Keuangan dan Pajak UMKM</title>
 
-<meta name="description" content="DIAUF.ID membantu UMKM mengelola keuangan, pembukuan, laporan usaha, dan pajak secara lebih rapi dan terukur.">
+<meta name="description" content="DIAUF.ID membantu UMKM mengelola keuangan, pembukuan, dashboard bisnis, dan pajak secara profesional.">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
---navy:#0f172a;
+--navy:#081120;
+--navy2:#101d34;
 --emerald:#10b981;
---light:#f8fafc;
---text:#1e293b;
+--white:#ffffff;
+--bg:#f8fafc;
+--text:#0f172a;
 --muted:#64748b;
 }
 
@@ -26,10 +28,11 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Inter',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:white;
+background:#fff;
 color:var(--text);
 line-height:1.7;
 }
@@ -41,22 +44,24 @@ margin:auto;
 }
 
 header{
-background:var(--navy);
-padding:20px 0;
-position:sticky;
+position:fixed;
 top:0;
+width:100%;
 z-index:999;
+background:rgba(8,17,32,.85);
+backdrop-filter:blur(10px);
 }
 
 nav{
+height:80px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 }
 
 .logo{
-font-size:28px;
-font-weight:700;
+font-size:30px;
+font-weight:800;
 color:white;
 }
 
@@ -67,84 +72,117 @@ color:var(--emerald);
 .menu a{
 color:white;
 text-decoration:none;
-margin-left:25px;
-font-size:14px;
+margin-left:30px;
+font-weight:500;
 }
 
 .hero{
-background:linear-gradient(
+padding-top:140px;
+padding-bottom:100px;
+background:
+linear-gradient(
 135deg,
-#0f172a,
-#1e293b
+var(--navy),
+var(--navy2)
 );
 color:white;
-padding:100px 0;
 }
 
 .hero-grid{
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
+grid-template-columns:1.1fr .9fr;
+gap:60px;
 align-items:center;
 }
 
-.hero h1{
-font-size:54px;
-line-height:1.2;
+.badge{
+display:inline-block;
+padding:8px 16px;
+background:rgba(16,185,129,.15);
+border:1px solid rgba(16,185,129,.3);
+border-radius:100px;
+color:#7fffd4;
+font-size:13px;
 margin-bottom:20px;
 }
 
+.hero h1{
+font-size:64px;
+line-height:1.1;
+margin-bottom:20px;
+font-weight:800;
+}
+
 .hero p{
-font-size:18px;
+font-size:20px;
 color:#cbd5e1;
-margin-bottom:30px;
+margin-bottom:35px;
 }
 
 .btn{
 display:inline-block;
-padding:15px 30px;
+padding:16px 32px;
 background:var(--emerald);
 color:white;
 text-decoration:none;
-border-radius:12px;
+border-radius:14px;
 font-weight:600;
 }
 
-.hero-card{
+.btn:hover{
+transform:translateY(-2px);
+}
+
+.dashboard{
 background:white;
-color:black;
 padding:30px;
-border-radius:20px;
-box-shadow:0 15px 40px rgba(0,0,0,.15);
+border-radius:24px;
+box-shadow:0 25px 60px rgba(0,0,0,.25);
 }
 
-.hero-card h3{
-margin-bottom:20px;
+.dashboard h3{
+margin-bottom:25px;
+color:#111;
 }
 
-.hero-card ul{
-padding-left:20px;
+.metric{
+display:flex;
+justify-content:space-between;
+padding:16px 0;
+border-bottom:1px solid #eee;
+}
+
+.metric:last-child{
+border:none;
+}
+
+.metric span{
+color:#666;
+}
+
+.metric b{
+font-size:18px;
 }
 
 section{
-padding:90px 0;
+padding:100px 0;
 }
 
-.section-title{
+.title{
 text-align:center;
-margin-bottom:50px;
+margin-bottom:60px;
 }
 
-.section-title h2{
-font-size:40px;
+.title h2{
+font-size:44px;
 margin-bottom:10px;
 }
 
-.section-title p{
+.title p{
 color:var(--muted);
 }
 
-.cards{
+.services{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:25px;
@@ -152,9 +190,14 @@ gap:25px;
 
 .card{
 background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 5px 20px rgba(0,0,0,.06);
+padding:35px;
+border-radius:24px;
+box-shadow:0 10px 30px rgba(0,0,0,.06);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
 }
 
 .card h3{
@@ -165,22 +208,50 @@ margin-bottom:15px;
 background:#f8fafc;
 }
 
+.why{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.why-box{
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+.why-box h3{
+font-size:40px;
+color:var(--emerald);
+}
+
 .pricing{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:25px;
 }
 
-.price-box{
+.plan{
+padding:40px;
+border-radius:24px;
 background:white;
-padding:35px;
-border-radius:20px;
-box-shadow:0 5px 20px rgba(0,0,0,.06);
+box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+.plan.featured{
+background:var(--navy);
+color:white;
+transform:scale(1.03);
+}
+
+.plan h3{
+margin-bottom:15px;
 }
 
 .price{
-font-size:40px;
-font-weight:bold;
+font-size:46px;
+font-weight:800;
 margin:20px 0;
 }
 
@@ -190,47 +261,80 @@ grid-template-columns:repeat(3,1fr);
 gap:25px;
 }
 
-.blog-card{
+.article{
 background:white;
-padding:25px;
-border-radius:20px;
-box-shadow:0 5px 20px rgba(0,0,0,.06);
+padding:30px;
+border-radius:24px;
+box-shadow:0 10px 30px rgba(0,0,0,.06);
 }
 
 .cta{
-background:var(--navy);
+background:linear-gradient(
+135deg,
+var(--navy),
+#12213d
+);
 color:white;
 text-align:center;
-padding:100px 0;
 }
 
 .cta h2{
-font-size:42px;
+font-size:50px;
 margin-bottom:20px;
 }
 
 footer{
-background:#020617;
-color:#94a3b8;
-padding:30px;
+background:#050b16;
+padding:40px;
 text-align:center;
+color:#94a3b8;
+}
+
+.wa{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25d366;
+color:white;
+padding:15px 22px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
 
 @media(max-width:900px){
 
 .hero-grid,
-.cards,
-.pricing,
-.blog{
+.services,
+pricing,
+.blog,
+.why{
 grid-template-columns:1fr;
 }
 
 .hero h1{
-font-size:40px;
+font-size:44px;
 }
 
 .menu{
 display:none;
+}
+
+.pricing{
+grid-template-columns:1fr;
+}
+
+.why{
+grid-template-columns:1fr 1fr;
+}
+
+.blog{
+grid-template-columns:1fr;
+}
+
+.services{
+grid-template-columns:1fr;
 }
 
 }
@@ -252,10 +356,9 @@ DIAUF<span>.ID</span>
 </div>
 
 <div class="menu">
-<a href="#">Home</a>
-<a href="#">Layanan</a>
-<a href="#">Artikel</a>
-<a href="#">Kontak</a>
+<a href="#layanan">Layanan</a>
+<a href="#paket">Paket</a>
+<a href="#artikel">Artikel</a>
 </div>
 
 </nav>
@@ -272,12 +375,18 @@ DIAUF<span>.ID</span>
 
 <div>
 
+<div class="badge">
+MITRA MANAJEMEN KEUANGAN DAN PAJAK UMKM
+</div>
+
 <h1>
-Mitra Manajemen Keuangan dan Pajak UMKM
+Fokus Mengembangkan Usaha.
+Urusan Keuangan dan Pajak,
+Serahkan pada Kami.
 </h1>
 
 <p>
-Kami membantu UMKM memiliki pencatatan keuangan yang rapi, laporan yang mudah dipahami, serta kepatuhan pajak yang lebih terkontrol.
+DIAUF.ID membantu UMKM memiliki laporan keuangan yang rapi, dashboard bisnis, monitoring arus kas, hingga pendampingan pajak dalam satu layanan.
 </p>
 
 <a href="#" class="btn">
@@ -286,20 +395,29 @@ Konsultasi Gratis
 
 </div>
 
-<div class="hero-card">
+<div class="dashboard">
 
-<h3>Yang Kami Bantu</h3>
+<h3>Dashboard Bisnis</h3>
 
-<ul>
+<div class="metric">
+<span>Penjualan Bulan Ini</span>
+<b>Rp148.750.000</b>
+</div>
 
-<li>Pembukuan dan pencatatan usaha</li>
-<li>Laporan keuangan bulanan</li>
-<li>Monitoring arus kas</li>
-<li>Dashboard bisnis</li>
-<li>Pendampingan pajak UMKM</li>
-<li>Konsultasi manajemen keuangan</li>
+<div class="metric">
+<span>Laba Bersih</span>
+<b>Rp37.250.000</b>
+</div>
 
-</ul>
+<div class="metric">
+<span>Saldo Kas</span>
+<b>Rp65.000.000</b>
+</div>
+
+<div class="metric">
+<span>Piutang</span>
+<b>Rp12.000.000</b>
+</div>
 
 </div>
 
@@ -309,33 +427,33 @@ Konsultasi Gratis
 
 </section>
 
-<section>
+<section id="layanan">
 
 <div class="container">
 
-<div class="section-title">
+<div class="title">
 
 <h2>Layanan Kami</h2>
 
-<p>Dirancang untuk UMKM yang ingin naik kelas</p>
+<p>Solusi keuangan dan pajak yang dirancang untuk UMKM</p>
 
 </div>
 
-<div class="cards">
+<div class="services">
 
 <div class="card">
 <h3>Pembukuan UMKM</h3>
-<p>Pencatatan transaksi dan laporan keuangan yang rapi setiap bulan.</p>
+<p>Pencatatan transaksi dan laporan keuangan yang lebih rapi dan mudah dipahami.</p>
 </div>
 
 <div class="card">
 <h3>Dashboard Bisnis</h3>
-<p>Monitoring penjualan, laba, kas, hutang, dan piutang secara real time.</p>
+<p>Pantau penjualan, laba, kas, hutang dan piutang secara terukur.</p>
 </div>
 
 <div class="card">
 <h3>Pendampingan Pajak</h3>
-<p>Membantu perhitungan dan pelaporan pajak usaha.</p>
+<p>Membantu kepatuhan pajak usaha tanpa membuat pemilik usaha pusing.</p>
 </div>
 
 </div>
@@ -348,27 +466,32 @@ Konsultasi Gratis
 
 <div class="container">
 
-<div class="section-title">
+<div class="title">
 
-<h2>Kenapa DIAUF.ID?</h2>
+<h2>Mengapa DIAUF.ID?</h2>
 
 </div>
 
-<div class="cards">
+<div class="why">
 
-<div class="card">
-<h3>Praktis</h3>
-<p>Sistem mudah digunakan oleh pemilik usaha maupun admin.</p>
+<div class="why-box">
+<h3>100+</h3>
+<p>Laporan per bulan</p>
 </div>
 
-<div class="card">
-<h3>Terjangkau</h3>
-<p>Biaya lebih ringan dibanding merekrut staf keuangan penuh waktu.</p>
+<div class="why-box">
+<h3>24/7</h3>
+<p>Monitoring data</p>
 </div>
 
-<div class="card">
-<h3>Pendampingan</h3>
-<p>Bukan hanya software, tetapi juga arahan dan konsultasi.</p>
+<div class="why-box">
+<h3>UMKM</h3>
+<p>Fokus pasar utama</p>
+</div>
+
+<div class="why-box">
+<h3>Custom</h3>
+<p>Sesuai kebutuhan usaha</p>
 </div>
 
 </div>
@@ -377,11 +500,11 @@ Konsultasi Gratis
 
 </section>
 
-<section>
+<section id="paket">
 
 <div class="container">
 
-<div class="section-title">
+<div class="title">
 
 <h2>Paket Layanan</h2>
 
@@ -389,40 +512,22 @@ Konsultasi Gratis
 
 <div class="pricing">
 
-<div class="price-box">
-
-<h3>Monitoring</h3>
-
-<div class="price">
-Rp1 Juta
+<div class="plan">
+<h3>Monitoring Keuangan</h3>
+<div class="price">Rp1 Jt</div>
+<p>Mulai per bulan</p>
 </div>
 
-<p>Per bulan</p>
-
+<div class="plan featured">
+<h3>Pendampingan Operasional</h3>
+<div class="price">Rp1,5 Jt</div>
+<p>Mulai per bulan</p>
 </div>
 
-<div class="price-box">
-
-<h3>Input Data</h3>
-
-<div class="price">
-Rp1,5 Juta
-</div>
-
-<p>Per bulan</p>
-
-</div>
-
-<div class="price-box">
-
-<h3>Lengkap + Pajak</h3>
-
-<div class="price">
-Rp2,5 Juta
-</div>
-
-<p>Per bulan</p>
-
+<div class="plan">
+<h3>Manajemen + Pajak</h3>
+<div class="price">Rp2,5 Jt</div>
+<p>Mulai per bulan</p>
 </div>
 
 </div>
@@ -431,11 +536,11 @@ Rp2,5 Juta
 
 </section>
 
-<section class="gray">
+<section class="gray" id="artikel">
 
 <div class="container">
 
-<div class="section-title">
+<div class="title">
 
 <h2>Artikel Terbaru</h2>
 
@@ -443,18 +548,18 @@ Rp2,5 Juta
 
 <div class="blog">
 
-<div class="blog-card">
+<div class="article">
 <h3>5 Kesalahan Keuangan UMKM</h3>
-<p>Kesalahan yang paling sering membuat usaha sulit berkembang.</p>
+<p>Kesalahan sederhana yang sering menghambat pertumbuhan usaha.</p>
 </div>
 
-<div class="blog-card">
-<h3>Cara Memisahkan Uang Pribadi dan Usaha</h3>
-<p>Langkah sederhana yang wajib diterapkan pemilik UMKM.</p>
+<div class="article">
+<h3>Cara Memisahkan Uang Usaha dan Pribadi</h3>
+<p>Fondasi penting sebelum usaha berkembang lebih besar.</p>
 </div>
 
-<div class="blog-card">
-<h3>Pajak UMKM 2026</h3>
+<div class="article">
+<h3>Pajak UMKM Tahun 2026</h3>
 <p>Panduan singkat yang perlu diketahui pelaku usaha.</p>
 </div>
 
@@ -486,9 +591,13 @@ Hubungi Kami
 
 <footer>
 
-© 2026 DIAUF.ID - Mitra Manajemen Keuangan dan Pajak UMKM
+© 2026 DIAUF.ID — Mitra Manajemen Keuangan dan Pajak UMKM
 
 </footer>
+
+<a class="wa" href="#">
+💬 Konsultasi Gratis
+</a>
 
 </body>
 </html>
