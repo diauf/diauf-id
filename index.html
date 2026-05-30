@@ -320,6 +320,31 @@ padding:22px;
 font-weight:600;
 color:var(--emerald);
 }
+.detail-btn{
+margin-top:20px;
+background:none;
+border:none;
+cursor:pointer;
+font-weight:700;
+color:var(--emerald);
+font-size:15px;
+}
+
+.detail-content{
+display:none;
+margin-top:20px;
+padding-top:20px;
+border-top:1px solid rgba(255,255,255,.15);
+text-align:left;
+}
+
+.detail-content ul{
+padding-left:18px;
+}
+
+.detail-content li{
+margin-bottom:10px;
+}  
 footer{
 background:#050b16;
 padding:40px;
@@ -602,26 +627,165 @@ Lebih hemat, lebih terukur, dan tetap mendapatkan sistem keuangan yang profesion
 
 <h2>Paket Layanan</h2>
 
+<p>
+Pilih layanan yang sesuai dengan kebutuhan usaha Anda.
+</p>
+
 </div>
 
 <div class="pricing">
 
+<!-- PAKET 1 -->
+
 <div class="plan">
-<h3>Monitoring Keuangan</h3>
-<div class="price">Rp1 Jt</div>
-<p>Mulai per bulan</p>
+
+<h3>STARTER</h3>
+
+<h4 style="margin-top:10px;">
+Monitoring Sistem Keuangan
+</h4>
+
+<div class="price">
+Rp1 Jt
 </div>
+
+<p>per bulan</p>
+
+<button class="detail-btn"
+onclick="toggleDetail('paket1')">
+
++ Lihat Detail
+
+</button>
+
+<div id="paket1" class="detail-content">
+
+<ul>
+
+<li>✓ Pelatihan admin (awal implementasi)</li>
+
+<li>✓ Monitoring pencatatan transaksi</li>
+
+<li>✓ Dashboard bisnis realtime</li>
+
+<li>✓ Konsultasi penggunaan sistem</li>
+
+<li>✓ Maintenance & update sistem</li>
+
+<li>✓ Support WhatsApp</li>
+
+<li>✓ Review kendala penggunaan sistem</li>
+
+<li>✗ Input transaksi oleh klien</li>
+
+<li>✗ Tidak termasuk kontrol bulanan</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- PAKET 2 -->
 
 <div class="plan featured">
-<h3>Pendampingan Operasional</h3>
-<div class="price">Rp1,5 Jt</div>
-<p>Mulai per bulan</p>
+
+<h3>GROWTH ⭐</h3>
+
+<h4 style="margin-top:10px;">
+Pendampingan Keuangan UMKM
+</h4>
+
+<div class="price">
+Rp1,5 Jt
 </div>
 
+<p>per bulan</p>
+
+<button class="detail-btn"
+onclick="toggleDetail('paket2')">
+
++ Lihat Detail
+
+</button>
+
+<div id="paket2" class="detail-content">
+
+<ul>
+
+<li>✓ Semua fitur Paket Starter</li>
+
+<li>✓ Input transaksi oleh tim DIAUF.ID</li>
+
+<li>✓ Kontrol dan review berkala</li>
+
+<li>✓ Insight bisnis bulanan</li>
+
+<li>✓ Evaluasi arus kas</li>
+
+<li>✓ Evaluasi hutang & piutang</li>
+
+<li>✓ Kunjungan bulanan area Malang Raya</li>
+
+<li>✓ Support prioritas</li>
+
+<li>✓ Rekomendasi perbaikan operasional</li>
+
+</ul>
+
+<p style="margin-top:15px;font-size:13px;">
+* Wilayah luar Malang Raya dikenakan biaya transportasi sesuai lokasi.
+</p>
+
+</div>
+
+</div>
+
+<!-- PAKET 3 -->
+
 <div class="plan">
-<h3>Manajemen + Pajak</h3>
-<div class="price">Rp2,5 Jt</div>
-<p>Mulai per bulan</p>
+
+<h3>BUSINESS</h3>
+
+<h4 style="margin-top:10px;">
+Manajemen Keuangan & Pajak
+</h4>
+
+<div class="price">
+Rp2,5 Jt
+</div>
+
+<p>per bulan</p>
+
+<button class="detail-btn"
+onclick="toggleDetail('paket3')">
+
++ Lihat Detail
+
+</button>
+
+<div id="paket3" class="detail-content">
+
+<ul>
+
+<li>✓ Semua fitur Paket Growth</li>
+
+<li>✓ Perhitungan pajak rutin</li>
+
+<li>✓ Penyusunan SPT Masa</li>
+
+<li>✓ Monitoring kepatuhan pajak</li>
+
+<li>✓ Pengingat jatuh tempo pajak</li>
+
+<li>✓ Konsultasi perpajakan</li>
+
+<li>✓ Pendampingan administrasi pajak</li>
+
+</ul>
+
+</div>
+
 </div>
 
 </div>
@@ -702,6 +866,25 @@ height="22">
 <span>Konsultasi Gratis</span>
 
 </a>
+<script>
 
+function toggleDetail(id){
+
+const x =
+document.getElementById(id);
+
+if(x.style.display==="block"){
+
+x.style.display="none";
+
+}else{
+
+x.style.display="block";
+
+}
+
+}
+
+</script>
 </body>
 </html>
