@@ -69,14 +69,13 @@ color:white;
 color:var(--emerald);
 }
 
-.menu a{
 .portal-btn{
 display:inline-flex;
 align-items:center;
 gap:8px;
 
 margin-left:35px;
-padding:12px 22px;
+padding:12px 24px;
 
 background:linear-gradient(
 135deg,
@@ -92,20 +91,19 @@ border-radius:14px;
 text-decoration:none;
 
 box-shadow:
-0 10px 25px rgba(16,185,129,.35);
+0 8px 20px rgba(16,185,129,.35);
 
-transition:.3s ease;
+transition:all .3s ease;
 }
 
 .portal-btn:hover{
-transform:translateY(-3px);
+transform:translateY(-2px);
 box-shadow:
-0 18px 35px rgba(16,185,129,.45);
+0 15px 35px rgba(16,185,129,.45);
 }
-color:white;
-text-decoration:none;
-margin-left:30px;
-font-weight:500;
+
+.portal-btn::before{
+content:"🔒";
 }
 
 .hero{
@@ -455,8 +453,8 @@ DIAUF<span>.ID</span>
     <a href="artikel.html">Artikel</a>
 
     <a href="login.html" class="portal-btn">
-        🔒 Portal Klien
-    </a>
+    Portal Klien
+</a>
 </div>
 
 </nav>
