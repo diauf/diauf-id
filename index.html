@@ -68,13 +68,28 @@ color:white;
 .logo span{
 color:var(--emerald);
 }
+    
+.menu{
+display:flex;
+align-items:center;
+gap:30px;
+}
 
+.menu a{
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.menu a:hover{
+color:var(--emerald);
+}
 .portal-btn{
 display:inline-flex;
 align-items:center;
 gap:8px;
 
-margin-left:35px;
 padding:12px 24px;
 
 background:linear-gradient(
@@ -83,7 +98,7 @@ background:linear-gradient(
 #059669
 );
 
-color:white !important;
+color:#fff !important;
 font-weight:700;
 
 border-radius:14px;
@@ -91,15 +106,16 @@ border-radius:14px;
 text-decoration:none;
 
 box-shadow:
-0 8px 20px rgba(16,185,129,.35);
+0 10px 25px rgba(16,185,129,.35);
 
 transition:all .3s ease;
 }
 
 .portal-btn:hover{
+color:#fff !important;
 transform:translateY(-2px);
 box-shadow:
-0 15px 35px rgba(16,185,129,.45);
+0 18px 35px rgba(16,185,129,.45);
 }
 
 .portal-btn::before{
