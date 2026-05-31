@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,12 +13,13 @@
 
 :root{
 --navy:#081120;
---navy2:#0f1b31;
+--navy2:#101d34;
 --emerald:#10b981;
---bg:#f4f7fb;
+--bg:#f5f7fb;
 --card:#ffffff;
 --text:#0f172a;
 --muted:#64748b;
+--border:#e2e8f0;
 }
 
 *{
@@ -29,6 +31,10 @@ font-family:'Inter',sans-serif;
 
 body{
 background:var(--bg);
+color:var(--text);
+}
+
+.dashboard-layout{
 display:flex;
 min-height:100vh;
 }
@@ -36,325 +42,863 @@ min-height:100vh;
 /* SIDEBAR */
 
 .sidebar{
-width:260px;
-background:var(--navy);
+width:280px;
+background:linear-gradient(
+180deg,
+var(--navy),
+#0e1b33
+);
 color:white;
 padding:30px 20px;
 position:fixed;
-height:100%;
+left:0;
+top:0;
+bottom:0;
 overflow:auto;
 }
 
-.brand{
+.logo{
+font-size:42px;
+font-weight:800;
+margin-bottom:5px;
+}
+
+.logo span{
+color:var(--emerald);
+}
+
+.tagline{
+font-size:14px;
+color:#cbd5e1;
 margin-bottom:40px;
 }
 
-.brand h2{
-font-size:28px;
-font-weight:800;
-}
-
-.brand span{
-font-size:13px;
+.menu-title{
+font-size:12px;
 color:#94a3b8;
+margin-bottom:15px;
 }
 
-.menu{
+.nav-menu{
 display:flex;
 flex-direction:column;
 gap:10px;
 }
 
-.menu a{
-color:#cbd5e1;
-text-decoration:none;
+.nav-item{
 padding:14px 16px;
-border-radius:12px;
+border-radius:14px;
+text-decoration:none;
+color:white;
 transition:.3s;
 }
 
-.menu a:hover{
+.nav-item:hover{
 background:rgba(255,255,255,.08);
 }
 
-.menu a.active{
+.nav-item.active{
 background:var(--emerald);
-color:white;
 }
 
-/* CONTENT */
-
 .main{
-margin-left:260px;
-flex:1;
-padding:35px;
+margin-left:280px;
+width:calc(100% - 280px);
 }
 
 .topbar{
+height:90px;
+background:white;
+border-bottom:1px solid var(--border);
+
 display:flex;
 justify-content:space-between;
 align-items:center;
+
+padding:0 40px;
+}
+
+.page-title{
+font-size:22px;
+font-weight:800;
+}
+
+.company-box{
+background:#f1f5f9;
+padding:12px 20px;
+border-radius:14px;
+font-weight:700;
+}
+
+.content{
+padding:35px;
+}
+
+.filter-row{
+display:grid;
+grid-template-columns:1.2fr 1fr 1fr;
+gap:20px;
 margin-bottom:30px;
 }
 
-.topbar h1{
-font-size:32px;
-}
-
-.user{
+.filter-card{
 background:white;
-padding:12px 18px;
-border-radius:14px;
-font-weight:600;
-box-shadow:0 5px 15px rgba(0,0,0,.05);
-}
-
-/* KPI */
-
-.kpi-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-margin-bottom:25px;
-}
-
-.kpi{
-background:white;
-padding:25px;
+padding:20px;
 border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.04);
+}
+
+.filter-card label{
+display:block;
+margin-bottom:10px;
+font-size:13px;
+color:var(--muted);
+}
+
+.filter-card select,
+.filter-card input{
+width:100%;
+padding:12px;
+border:1px solid var(--border);
+border-radius:12px;
+}
+
+.overview-grid{
+display:grid;
+grid-template-columns:420px 1fr;
+gap:25px;
+}
+
+.score-card,
+.insight-card{
+background:white;
+border-radius:28px;
+padding:30px;
 box-shadow:0 10px 30px rgba(0,0,0,.05);
 }
 
-.kpi h3{
+.score-title,
+.insight-title{
+font-size:20px;
+font-weight:700;
+margin-bottom:25px;
+}
+
+.gauge{
+width:260px;
+height:260px;
+margin:auto;
+border-radius:50%;
+background:
+conic-gradient(
+#22c55e 0deg,
+#84cc16 180deg,
+#facc15 240deg,
+#fb923c 290deg,
+#ef4444 360deg
+);
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.gauge-inner{
+width:190px;
+height:190px;
+background:white;
+border-radius:50%;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+}
+
+.gauge-number{
+font-size:58px;
+font-weight:800;
+}
+
+.gauge-text{
+color:var(--muted);
+}
+
+.insight-item{
+padding:16px;
+background:#f8fafc;
+border-left:5px solid var(--emerald);
+border-radius:12px;
+margin-bottom:15px;
+}
+
+.insight-item h4{
+margin-bottom:5px;
+}
+
+.insight-item p{
 font-size:14px;
 color:var(--muted);
+}
+
+.kpi-card{
+background:white;
+padding:22px;
+border-radius:22px;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+transition:.3s;
+}
+
+.kpi-card:hover{
+transform:translateY(-4px);
+}
+
+.kpi-label{
+font-size:13px;
+color:var(--muted);
 margin-bottom:10px;
 }
 
-.kpi .value{
-font-size:32px;
+.kpi-value{
+font-size:30px;
 font-weight:800;
 }
 
-/* HEALTH SCORE */
-
-.health{
-background:white;
-padding:25px;
-border-radius:20px;
-margin-bottom:25px;
-box-shadow:0 10px 30px rgba(0,0,0,.05);
-}
-
-.health h2{
-margin-bottom:15px;
-}
-
-.score{
-font-size:64px;
-font-weight:800;
-color:var(--emerald);
-}
-
-/* INSIGHT */
-
-.insight{
-background:white;
-padding:25px;
-border-radius:20px;
-margin-bottom:25px;
-box-shadow:0 10px 30px rgba(0,0,0,.05);
-}
-
-.insight ul{
-padding-left:20px;
-}
-
-.insight li{
-margin-bottom:10px;
-}
-
-/* MODULES */
-
-.modules{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-}
-
-.module{
-background:white;
-padding:25px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.05);
-}
-
-.module h3{
-margin-bottom:15px;
-}
-
-.module p{
+.kpi-growth{
+margin-top:10px;
+font-size:13px;
 color:var(--muted);
 }
 
-/* RESPONSIVE */
-
-@media(max-width:1000px){
-
-.kpi-grid{
-grid-template-columns:repeat(2,1fr);
+.up{
+color:#16a34a;
+font-weight:700;
 }
 
-.modules{
-grid-template-columns:repeat(2,1fr);
+.warning{
+color:#f59e0b;
 }
 
+.danger{
+color:#ef4444;
 }
 
-@media(max-width:768px){
-
-.sidebar{
-display:none;
+.clickable{
+cursor:pointer;
+}
+.analytics-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+margin-top:25px;
 }
 
-.main{
-margin-left:0;
-padding:20px;
+.chart-card,
+.table-card{
+background:white;
+padding:25px;
+border-radius:24px;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
 }
 
-.kpi-grid,
-.modules{
-grid-template-columns:1fr;
+.chart-card h3,
+.table-card h3{
+margin-bottom:20px;
 }
 
-.topbar{
+.fake-chart{
+height:250px;
+display:flex;
+align-items:flex-end;
+gap:12px;
+}
+
+.bar{
+flex:1;
+background:#3b82f6;
+border-radius:10px 10px 0 0;
+}
+
+.green{
+background:#10b981;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+table td{
+padding:14px 0;
+border-bottom:1px solid #eee;
+}
+
+.stock-list{
+display:flex;
 flex-direction:column;
-align-items:flex-start;
-gap:15px;
+gap:18px;
 }
 
+.stock-item span{
+display:block;
+margin-bottom:8px;
+font-weight:600;
 }
 
+.fuel{
+height:14px;
+background:#e5e7eb;
+border-radius:100px;
+overflow:hidden;
+}
+
+.fuel-red{
+height:100%;
+background:#ef4444;
+animation:blink 1s infinite;
+}
+
+.fuel-yellow{
+height:100%;
+background:#f59e0b;
+}
+
+.fuel-green{
+height:100%;
+background:#10b981;
+}
+
+@keyframes blink{
+50%{
+opacity:.4;
+}
+}
+.modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.55);
+backdrop-filter:blur(4px);
+z-index:9999;
+justify-content:center;
+align-items:center;
+}
+
+.modal-box{
+width:700px;
+max-width:90%;
+background:white;
+border-radius:24px;
+padding:30px;
+}
+
+.modal-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+.modal-header h3{
+font-size:24px;
+}
+
+.modal-header button{
+border:none;
+background:#ef4444;
+color:white;
+width:38px;
+height:38px;
+border-radius:10px;
+cursor:pointer;
+font-size:18px;
+}
+
+.modal-table{
+width:100%;
+border-collapse:collapse;
+}
+
+.modal-table td{
+padding:12px 0;
+border-bottom:1px solid #eee;
+}
+  
 </style>
+
 </head>
 
 <body>
 
-<div class="sidebar">
+<div class="dashboard-layout">
 
-<div class="brand">
-<h2>DIAUF.ID</h2>
-<span>Business Operating System for UMKM</span>
+<aside class="sidebar">
+
+<div class="logo">
+DIAUF<span>.ID</span>
 </div>
 
-<div class="menu">
-
-<a class="active" href="#">🏠 Dashboard</a>
-
-<a href="#">💰 Keuangan</a>
-
-<a href="#">📦 Inventory</a>
-
-<a href="#">👥 SDM</a>
-
-<a href="#">🏭 Operasional</a>
-
-<a href="#">📄 Pajak</a>
-
-<a href="#">📊 Laporan</a>
-
-<a href="#">⚙ Pengaturan</a>
-
+<div class="tagline">
+Business Operating System for UMKM
 </div>
 
+<div class="menu-title">
+MENU
 </div>
+
+<nav class="nav-menu">
+
+<a class="nav-item active" href="#">
+🏠 Dashboard
+</a>
+
+<a class="nav-item" href="#">
+💰 Keuangan
+</a>
+
+<a class="nav-item" href="#">
+📦 Inventory
+</a>
+
+<a class="nav-item" href="#">
+👥 Karyawan
+</a>
+
+<a class="nav-item" href="#">
+🧾 Payroll
+</a>
+
+<a class="nav-item" href="#">
+🏢 Aset
+</a>
+
+<a class="nav-item" href="#">
+📊 Laporan
+</a>
+
+</nav>
+
+</aside>
 
 <div class="main">
 
-<div class="topbar">
+<header class="topbar">
 
-<h1>Dashboard Utama</h1>
+<div class="page-title">
+Dashboard Utama
+</div>
 
-<div class="user">
+<div class="company-box">
 PT MIE PARSEH JAYA
 </div>
 
+</header>
+
+<div class="content">
+
+<div class="filter-row">
+
+<div class="filter-card">
+<label>Cabang</label>
+<select>
+<option>Semua Cabang</option>
+<option>Pusat</option>
+<option>Cabang 1</option>
+<option>Cabang 2</option>
+</select>
 </div>
 
-<div class="kpi-grid">
-
-<div class="kpi">
-<h3>Penjualan</h3>
-<div class="value">148 JT</div>
+<div class="filter-card">
+<label>Tanggal Awal</label>
+<input type="date">
 </div>
 
-<div class="kpi">
-<h3>Laba Bersih</h3>
-<div class="value">37 JT</div>
+<div class="filter-card">
+<label>Tanggal Akhir</label>
+<input type="date">
 </div>
-
-<div class="kpi">
-<h3>Kas & Bank</h3>
-<div class="value">65 JT</div>
-</div>
-
-<div class="kpi">
-<h3>Piutang</h3>
-<div class="value">12 JT</div>
-</div>
-
-</div>
-
-<div class="health">
-
-<h2>Business Health Score</h2>
-
-<div class="score">
-87
-</div>
-
-<p>Bisnis dalam kondisi sehat dan terkendali.</p>
 
 </div>
 
-<div class="insight">
+<div class="overview-grid">
 
-<h2>Insight DIAUF.ID</h2>
+<div class="score-card">
 
-<ul>
-<li>Penjualan naik 12% dibanding bulan lalu.</li>
-<li>Piutang Rp8.500.000 jatuh tempo minggu ini.</li>
-<li>Stok kemasan mulai menipis.</li>
-<li>Pajak bulan ini aman.</li>
-</ul>
-
+<div class="score-title">
+Performa Usaha
 </div>
 
-<div class="modules">
+<div class="gauge">
 
-<div class="module">
-<h3>💰 Keuangan</h3>
-<p>Kas, bank, hutang, piutang, laba rugi.</p>
+<div class="gauge-inner">
+
+<div class="gauge-number">
+82
 </div>
 
-<div class="module">
-<h3>📦 Inventory</h3>
-<p>324 SKU aktif dan 12 stok menipis.</p>
-</div>
-
-<div class="module">
-<h3>👥 SDM</h3>
-<p>18 karyawan aktif.</p>
-</div>
-
-<div class="module">
-<h3>📄 Pajak</h3>
-<p>Seluruh kewajiban pajak aman.</p>
+<div class="gauge-text">
+Business Score
 </div>
 
 </div>
 
 </div>
+
+</div>
+
+<div class="insight-card">
+
+<div class="insight-title">
+Insight Usaha
+</div>
+
+<div class="insight-item">
+<h4>Omzet Bertumbuh</h4>
+<p>Omzet naik 14% dibanding periode sebelumnya.</p>
+</div>
+
+<div class="insight-item">
+<h4>Piutang Perlu Perhatian</h4>
+<p>3 pelanggan memiliki piutang di atas 30 hari.</p>
+</div>
+
+<div class="insight-item">
+<h4>Stok Menipis</h4>
+<p>5 produk berada di bawah batas aman.</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- KPI CARDS -->
+
+<div style="
+margin-top:25px;
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:20px;
+">
+
+<div class="kpi-card">
+<div class="kpi-label">Omzet</div>
+<div class="kpi-value">Rp 485 Jt</div>
+<div class="kpi-growth up">▲ 14.2%</div>
+</div>
+
+<div class="kpi-card">
+<div class="kpi-label">Laba Bersih</div>
+<div class="kpi-value">Rp 97 Jt</div>
+<div class="kpi-growth up">▲ 8.4%</div>
+</div>
+
+<div class="kpi-card">
+<div class="kpi-label">Cashflow</div>
+<div class="kpi-value">+ Rp 32 Jt</div>
+<div class="kpi-growth up">▲ Positif</div>
+</div>
+
+<div class="kpi-card clickable"
+onclick="showKas()">
+<div class="kpi-value">Rp 168 Jt</div>
+<div class="kpi-growth">Klik Detail</div>
+</div>
+
+<div class="kpi-card clickable"
+onclick="showHutang()">
+<div class="kpi-value">Rp 56 Jt</div>
+<div class="kpi-growth">5 Supplier</div>
+</div>
+
+<div class="kpi-card clickable"
+onclick="showPiutang()">
+<div class="kpi-value">Rp 73 Jt</div>
+<div class="kpi-growth">8 Pelanggan</div>
+</div>
+
+<div class="kpi-card clickable"
+onclick="showStok()">
+<div class="kpi-value danger">12 Item</div>
+<div class="kpi-growth">Perlu Restock</div>
+</div>
+
+<div class="kpi-card">
+<div class="kpi-label">Karyawan Hadir</div>
+<div class="kpi-value">9 / 12</div>
+<div class="kpi-growth">75%</div>
+</div>
+
+<div class="kpi-card clickable"
+onclick="showProduk()">
+<div class="kpi-value">5 Produk</div>
+<div class="kpi-growth">Lihat Ranking</div>
+</div>
+
+<div class="kpi-card">
+<div class="kpi-label">Alert Bisnis</div>
+<div class="kpi-value warning">3</div>
+<div class="kpi-growth">Perlu Perhatian</div>
+</div>
+
+</div>
+<!-- ANALYTICS -->
+
+<div class="analytics-grid">
+
+<div class="chart-card">
+
+<h3>Trend Omzet</h3>
+
+<div class="fake-chart">
+
+<div class="bar" style="height:40%"></div>
+<div class="bar" style="height:55%"></div>
+<div class="bar" style="height:48%"></div>
+<div class="bar" style="height:70%"></div>
+<div class="bar" style="height:82%"></div>
+<div class="bar" style="height:90%"></div>
+
+</div>
+
+</div>
+
+<div class="chart-card">
+
+<h3>Trend Laba Bersih</h3>
+
+<div class="fake-chart">
+
+<div class="bar green" style="height:35%"></div>
+<div class="bar green" style="height:50%"></div>
+<div class="bar green" style="height:42%"></div>
+<div class="bar green" style="height:65%"></div>
+<div class="bar green" style="height:75%"></div>
+<div class="bar green" style="height:88%"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="analytics-grid">
+
+<div class="table-card">
+
+<h3>Top 5 Produk</h3>
+
+<table>
+
+<tr>
+<td>Mie Ayam Original</td>
+<td>Rp 78 Jt</td>
+</tr>
+
+<tr>
+<td>Mie Ayam Bakso</td>
+<td>Rp 61 Jt</td>
+</tr>
+
+<tr>
+<td>Mie Ayam Ceker</td>
+<td>Rp 48 Jt</td>
+</tr>
+
+<tr>
+<td>Es Teh Jumbo</td>
+<td>Rp 33 Jt</td>
+</tr>
+
+<tr>
+<td>Pangsit Goreng</td>
+<td>Rp 27 Jt</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="table-card">
+
+<h3>Top 5 Piutang</h3>
+
+<table>
+
+<tr>
+<td>Toko Makmur</td>
+<td>Rp 15 Jt</td>
+</tr>
+
+<tr>
+<td>Toko Sentosa</td>
+<td>Rp 12 Jt</td>
+</tr>
+
+<tr>
+<td>Toko Berkah</td>
+<td>Rp 10 Jt</td>
+</tr>
+
+<tr>
+<td>Toko Jaya</td>
+<td>Rp 8 Jt</td>
+</tr>
+
+<tr>
+<td>Toko Sukses</td>
+<td>Rp 5 Jt</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+
+<div class="analytics-grid">
+
+<div class="table-card">
+
+<h3>Top 5 Hutang Supplier</h3>
+
+<table>
+
+<tr>
+<td>Supplier A</td>
+<td>Rp 21 Jt</td>
+</tr>
+
+<tr>
+<td>Supplier B</td>
+<td>Rp 14 Jt</td>
+</tr>
+
+<tr>
+<td>Supplier C</td>
+<td>Rp 9 Jt</td>
+</tr>
+
+<tr>
+<td>Supplier D</td>
+<td>Rp 6 Jt</td>
+</tr>
+
+<tr>
+<td>Supplier E</td>
+<td>Rp 3 Jt</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="table-card">
+
+<h3>Stok Menipis</h3>
+
+<div class="stock-list">
+
+<div class="stock-item">
+
+<span>Tepung</span>
+
+<div class="fuel">
+
+<div class="fuel-red" style="width:15%"></div>
+
+</div>
+
+</div>
+
+<div class="stock-item">
+
+<span>Minyak</span>
+
+<div class="fuel">
+
+<div class="fuel-yellow" style="width:35%"></div>
+
+</div>
+
+</div>
+
+<div class="stock-item">
+
+<span>Mie</span>
+
+<div class="fuel">
+
+<div class="fuel-green" style="width:70%"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<!-- MODAL -->
+
+<div id="modal" class="modal">
+
+<div class="modal-box">
+
+<div class="modal-header">
+
+<h3 id="modalTitle">
+Detail
+</h3>
+
+<button onclick="closeModal()">
+✕
+</button>
+
+</div>
+
+<div id="modalContent">
+
+Isi Data
+
+</div>
+
+</div>
+
+</div>
+<!-- MODAL -->
+
+<div id="modal" class="modal">
+
+<div class="modal-box">
+
+<div class="modal-header">
+
+<h3 id="modalTitle">
+Detail
+</h3>
+
+<button onclick="closeModal()">
+✕
+</button>
+
+</div>
+
+<div id="modalContent">
+
+Isi Data
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* seluruh javascript Part 4 */
+
+</script>
 
 </body>
 </html>
