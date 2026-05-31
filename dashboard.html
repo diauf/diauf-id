@@ -896,7 +896,30 @@ Isi Data
 
 <script>
 
-/* seluruh javascript Part 4 */
+function openModal(title,content){
+
+document.getElementById("modalTitle").innerHTML=title;
+document.getElementById("modalContent").innerHTML=content;
+document.getElementById("modal").style.display="flex";
+
+}
+
+function closeModal(){
+
+document.getElementById("modal").style.display="none";
+
+}
+
+function showKas(){
+
+openModal(
+"Detail Saldo Kas",
+`
+<h3>Kas Besar : Rp 80 Jt</h3>
+`
+);
+
+}
 
 </script>
 
