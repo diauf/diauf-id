@@ -71,19 +71,36 @@ color:var(--emerald);
 
 .menu a{
 .portal-btn{
+display:inline-flex;
+align-items:center;
+gap:8px;
+
 margin-left:35px;
-padding:10px 18px;
-border-radius:12px;
-border:1px solid rgba(16,185,129,.4);
-background:rgba(16,185,129,.12);
-color:#7fffd4 !important;
-font-weight:600;
-transition:.3s;
+padding:12px 22px;
+
+background:linear-gradient(
+135deg,
+#10b981,
+#059669
+);
+
+color:white !important;
+font-weight:700;
+
+border-radius:14px;
+
+text-decoration:none;
+
+box-shadow:
+0 10px 25px rgba(16,185,129,.35);
+
+transition:.3s ease;
 }
 
 .portal-btn:hover{
-background:#10b981;
-color:white !important;
+transform:translateY(-3px);
+box-shadow:
+0 18px 35px rgba(16,185,129,.45);
 }
 color:white;
 text-decoration:none;
@@ -433,13 +450,13 @@ DIAUF<span>.ID</span>
 </div>
 
 <div class="menu">
-<a href="#layanan">Layanan</a>
-<a href="#paket">Paket</a>
-<a href="artikel.html">Artikel</a>
+    <a href="#layanan">Layanan</a>
+    <a href="#paket">Paket</a>
+    <a href="artikel.html">Artikel</a>
 
-<a href="login.html" class="portal-btn">
-🔒 Portal Klien
-</a>
+    <a href="login.html" class="portal-btn">
+        🔒 Portal Klien
+    </a>
 </div>
 
 </nav>
