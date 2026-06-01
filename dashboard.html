@@ -421,7 +421,29 @@ border-collapse:collapse;
 padding:12px 0;
 border-bottom:1px solid #eee;
 }
-  
+.filters{
+display:flex;
+gap:12px;
+margin-top:12px;
+}
+
+.filters select{
+padding:10px 16px;
+border:none;
+border-radius:12px;
+background:white;
+font-weight:600;
+cursor:pointer;
+box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+
+.company-box{
+padding:14px 22px;
+background:white;
+border-radius:16px;
+font-weight:700;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+}  
 </style>
 
 </head>
@@ -480,7 +502,41 @@ MENU
 
 <div class="main">
 
-<header class="topbar">
+<div class="topbar">
+
+<div>
+
+<h1>Dashboard Utama</h1>
+
+<div class="filters">
+
+<select>
+<option>Semua Cabang</option>
+<option>Pusat</option>
+<option>Cabang Dinoyo</option>
+<option>Cabang Soekarno Hatta</option>
+<option>Cabang Batu</option>
+</select>
+
+<select>
+<option>Bulan Ini</option>
+<option>7 Hari Terakhir</option>
+<option>30 Hari Terakhir</option>
+<option>Tahun Ini</option>
+<option>Custom</option>
+</select>
+
+</div>
+
+</div>
+
+<div class="company-box">
+
+PT MIE PARSEH JAYA
+
+</div>
+
+</div>
 
 <div class="page-title">
 Dashboard Utama
