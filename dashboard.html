@@ -920,7 +920,154 @@ openModal(
 );
 
 }
+function showHutang(){
 
+document.getElementById("modal").style.display="flex";
+
+document.getElementById("modalTitle").innerHTML=
+"Top Hutang Supplier";
+
+document.getElementById("modalContent").innerHTML=`
+
+<div class="list-item">
+<span>PT Tepung Jaya</span>
+<b>Rp 18.500.000</b>
+</div>
+
+<div class="list-item">
+<span>CV Sumber Pangan</span>
+<b>Rp 12.200.000</b>
+</div>
+
+<div class="list-item">
+<span>PT Makmur Sentosa</span>
+<b>Rp 8.900.000</b>
+</div>
+
+<div class="list-item">
+<span>CV Berkah</span>
+<b>Rp 7.300.000</b>
+</div>
+
+<div class="list-item">
+<span>PT Nusantara</span>
+<b>Rp 5.100.000</b>
+</div>
+
+`;
+}
+function showPiutang(){
+
+document.getElementById("modal").style.display="flex";
+
+document.getElementById("modalTitle").innerHTML=
+"Top Piutang Pelanggan";
+
+document.getElementById("modalContent").innerHTML=`
+
+<div class="list-item">
+<span>Toko Maju</span>
+<b>Rp 22.000.000</b>
+</div>
+
+<div class="list-item">
+<span>UD Sukses</span>
+<b>Rp 17.500.000</b>
+</div>
+
+<div class="list-item">
+<span>PT Jaya Abadi</span>
+<b>Rp 11.200.000</b>
+</div>
+
+<div class="list-item">
+<span>Toko Berkah</span>
+<b>Rp 8.700.000</b>
+</div>
+
+<div class="list-item">
+<span>CV Makmur</span>
+<b>Rp 6.400.000</b>
+</div>
+
+`;
+}
+function showStok(){
+
+document.getElementById("modal").style.display="flex";
+
+document.getElementById("modalTitle").innerHTML=
+"Stok Menipis";
+
+document.getElementById("modalContent").innerHTML=`
+
+<div class="list-item">
+<span>Mie Original</span>
+<b>12</b>
+</div>
+
+<div class="list-item">
+<span>Mie Pedas</span>
+<b>9</b>
+</div>
+
+<div class="list-item">
+<span>Mie Ayam</span>
+<b>7</b>
+</div>
+
+<div class="list-item">
+<span>Saus Sambal</span>
+<b>5</b>
+</div>
+
+<div class="list-item">
+<span>Kemasan Bowl</span>
+<b>3</b>
+</div>
+
+`;
+}
+function showStok(){
+
+document.getElementById("modal").style.display="flex";
+
+document.getElementById("modalTitle").innerHTML=
+"Stok Menipis";
+
+document.getElementById("modalContent").innerHTML=`
+
+<div class="list-item">
+<span>Mie Original</span>
+<b>12</b>
+</div>
+
+<div class="list-item">
+<span>Mie Pedas</span>
+<b>9</b>
+</div>
+
+<div class="list-item">
+<span>Mie Ayam</span>
+<b>7</b>
+</div>
+
+<div class="list-item">
+<span>Saus Sambal</span>
+<b>5</b>
+</div>
+
+<div class="list-item">
+<span>Kemasan Bowl</span>
+<b>3</b>
+</div>
+
+`;
+}
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+  
 </script>
 
 </body>
