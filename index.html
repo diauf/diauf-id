@@ -228,7 +228,38 @@ text-decoration:none;
 font-weight:700;
 
 }
+.hero-buttons{
+display:flex;
+gap:15px;
+margin-top:30px;
+flex-wrap:wrap;
+}
 
+.btn-demo{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+
+padding:16px 32px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.2);
+
+color:white;
+text-decoration:none;
+
+border-radius:14px;
+
+font-weight:600;
+
+transition:.3s;
+}
+
+.btn-demo:hover{
+background:rgba(255,255,255,.15);
+transform:translateY(-2px);
+}
 .btn:hover{
 
 transform:translateY(-2px);
@@ -566,7 +597,69 @@ color:#10b981;
 font-weight:700;
 text-decoration:none;
 }
+.footer{
+background:#081120;
+padding:80px 0 30px;
+color:#cbd5e1;
+}
 
+.footer-grid{
+display:grid;
+grid-template-columns:
+2fr
+1fr
+1fr
+1fr;
+gap:50px;
+}
+
+.footer-logo{
+font-size:32px;
+font-weight:800;
+color:white;
+margin-bottom:18px;
+}
+
+.footer-logo span{
+color:#10b981;
+}
+
+.footer h4{
+color:white;
+margin-bottom:20px;
+}
+
+.footer a{
+display:block;
+color:#cbd5e1;
+text-decoration:none;
+margin-bottom:12px;
+transition:.3s;
+}
+
+.footer a:hover{
+color:#10b981;
+}
+
+.footer-desc{
+line-height:1.8;
+margin-bottom:12px;
+max-width:420px;
+}
+
+.footer-bottom{
+margin-top:50px;
+padding-top:25px;
+border-top:1px solid rgba(255,255,255,.08);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:15px;
+
+font-size:14px;
+}
 @media(max-width:900px){
 
 .feature-grid{
@@ -581,6 +674,21 @@ grid-template-columns:1fr;
 grid-template-columns:1fr;
 }
 
+.compare-head,
+.compare-row{
+grid-template-columns:1fr;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+.footer-bottom{
+flex-direction:column;
+text-align:center;
+}
+
+}
 .compare-head,
 .compare-row{
 grid-template-columns:1fr;
@@ -652,9 +760,17 @@ DIAUF.ID membantu UMKM memiliki sistem yang terintegrasi mulai dari keuangan, st
 
 </p>
 
+<div class="hero-buttons">
+
 <a href="https://wa.me/6281252510441" class="btn">
 Konsultasi Gratis
 </a>
+
+<a href="#demo" class="btn-demo">
+Lihat Demo
+</a>
+
+</div>
 
 </div>
 
@@ -1310,22 +1426,66 @@ Konsultasi Gratis
 
 </section>
 
-<footer>
+<footer class="footer">
+    <div class="container">
 
-<h3 style="margin-bottom:10px;">
-DIAUF.ID
-</h3>
+        <div class="footer-grid">
 
-<p>
-Sistem Manajemen Bisnis UMKM yang Didampingi Tim Profesional.
-</p>
+            <div>
+                <div class="footer-logo">
+                    DIAUF<span>.ID</span>
+                </div>
 
-<br>
+                <p class="footer-desc">
+                    Kelola Keuangan, Pajak, dan Operasional Usaha dalam Satu Sistem.
+                </p>
 
-<p>
-© 2026 DIAUF.ID
-</p>
+                <p class="footer-desc">
+                    Sistem manajemen bisnis UMKM yang didampingi tim profesional.
+                </p>
+            </div>
 
+            <div>
+                <h4>Menu</h4>
+
+                <a href="#tentang">Tentang DIAUF.ID</a>
+                <a href="#layanan">Layanan</a>
+                <a href="#paket">Paket</a>
+                <a href="#artikel">Artikel</a>
+            </div>
+
+            <div>
+                <h4>Fitur Unggulan</h4>
+
+                <a href="#">Dashboard Owner</a>
+                <a href="#">Multi Cabang</a>
+                <a href="#">GPS Armada</a>
+                <a href="#">AI Insight (Soon)</a>
+            </div>
+
+            <div>
+                <h4>Hubungi Kami</h4>
+
+                <p>📱 0812-5251-0441</p>
+                <p>✉ info@diauf.id</p>
+                <p>📍 Malang, Jawa Timur</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 DIAUF.ID. All Rights Reserved.
+            </p>
+
+            <p>
+                Dibangun untuk membantu UMKM Indonesia tumbuh lebih terukur.
+            </p>
+
+        </div>
+
+    </div>
 </footer>
 
 <a
