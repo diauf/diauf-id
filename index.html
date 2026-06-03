@@ -602,7 +602,17 @@ background:#081120;
 padding:80px 0 30px;
 color:#cbd5e1;
 }
+.footer p{
+margin-bottom:12px;
+display:flex;
+align-items:center;
+gap:10px;
+}
 
+.footer p i{
+width:18px;
+color:#10b981;
+}
 .footer-grid{
 display:grid;
 grid-template-columns:
@@ -716,7 +726,42 @@ text-align:center;
 }
 
 }
+.wa{
+position:fixed;
+right:20px;
+bottom:20px;
 
+display:flex;
+align-items:center;
+gap:10px;
+
+background:#25D366;
+color:white;
+
+padding:14px 22px;
+
+border-radius:999px;
+
+text-decoration:none;
+font-weight:600;
+
+z-index:9999;
+
+box-shadow:
+0 12px 30px rgba(37,211,102,.35);
+
+transition:.3s;
+}
+
+.wa:hover{
+transform:translateY(-3px);
+}
+
+.wa img{
+width:24px;
+height:24px;
+display:block;
+}
 </style>
 </head>
 <body>
@@ -1479,9 +1524,18 @@ Konsultasi Gratis
             <div>
                 <h4>Hubungi Kami</h4>
 
-                <p>📱 0812-5251-0441</p>
-                <p>✉ info@diauf.id</p>
-                <p>📍 Malang, Jawa Timur</p>
+                <p>
+                <i class="fa-solid fa-phone"></i>
+                0812-5251-0441
+                </p>
+                
+                <p><i class="fa-solid fa-envelope"></i>
+                info@diauf.id
+                </p>
+                
+                <p><i class="fa-solid fa-location-dot"></i>
+                Malang, Jawa Timur
+                </p>
             </div>
 
         </div>
@@ -1508,11 +1562,9 @@ target="_blank">
 
 <img
 src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
-width="22">
+alt="WhatsApp">
 
-<span>
-Konsultasi Gratis
-</span>
+<span>Konsultasi Gratis</span>
 
 </a>
 <script>
